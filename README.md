@@ -1,3 +1,51 @@
+# NIN AI ForChat (GitHub Distribution)
+
+The `.\ForChat` module in this repository is a **public-facing copy** meant to be dropped into Unity's `Assets/AI/ForChat`.
+
+## API Key Setup (Required)
+
+Copy each `.example` file and **replace `PUT_OUR_*` with your own keys**. **Never push files containing real keys to Git.**
+
+```powershell
+cd .\ForChat
+copy ckey.txt.example ckey.txt
+copy key.txt.example key.txt
+copy "yt key.txt.example" "yt key.txt"
+```
+
+| File | Purpose |
+|------|---------|
+| `.\ForChat\ckey.txt` | Anthropic Claude fallback (`PUT_OUR_ANTHROPIC_API_KEY`) |
+| `.\ForChat\key.txt` | OpenAI TTS / Vision fallback (`PUT_OUR_OPENAI_API_KEY`) |
+| `.\ForChat\yt key.txt` | YouTube Data API (`PUT_OUR_YOUTUBE_DATA_API_KEY`) |
+
+If you're using YouTube Live, enter your own channel ID in the Unity Inspector under `GetYoutubeLiveChat.channelId`.
+
+If you're using local LLM/TTS only, set `enabled: true` in `.\ForChat\local_llm_config.json` / `.\ForChat\local_tts_config.json` — the API keys above then serve only as a fallback.
+
+## Attaching to Unity
+
+1. Copy the entire `.\ForChat` folder from this repository into your project:
+   ```
+   <YourUnityProject>/Assets/AI/ForChat/
+   ```
+2. Place your GGUF model(s) in `.\ForChat\Models\` (see `Models\README.txt`)
+3. Install the OpenCV DLL in `.\ForChat\Fcam\Plugins\` (see `Fcam\Plugins\README.txt` — **not included in Git**)
+4. Run `.\ForChat\setup_local_llm.ps1` / `.\ForChat\setup_local_tts.ps1`
+5. Replace the API key templates
+6. Refer to `.\ForChat\README.md` for the startup sequence
+
+## Updating the Public Copy (from the dev PC)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\prepare_forchat_github.ps1 -Source "<original>/Assets/AI/ForChat"
+```
+
+If `-Source` is omitted, it will automatically look for `..\NIN_AI_3DModel_Ver2\Assets\AI\ForChat` in the same parent folder.
+
+Sensitive files, `.venv`, `chroma_db`, `TTS_Output`, and `*.gguf` are automatically excluded. Output: `.\ForChat\`
+
+
 # NIN AI ForChat (GitHub 배포용)
 
 이 저장소의 `.\ForChat` 모듈은 Unity `Assets/AI/ForChat` 에 붙여 쓰는 **공개용** 사본입니다.
@@ -45,8 +93,4 @@ powershell -ExecutionPolicy Bypass -File .\prepare_forchat_github.ps1 -Source "<
 
 민감 파일·`.venv`·`chroma_db`·`TTS_Output`·`*.gguf` 는 자동 제외됩니다. 출력: `.\ForChat\`
 
-## 보안
 
-- OBS **스트림 키**는 이 저장소에 넣지 마세요.
-- `YYDate.Json` / `session_history.json` 은 개인 대화 — `.gitignore` 처리됨.
-- 키가 채팅·로그에 노출되었으면 **즉시 재발급**하세요.
