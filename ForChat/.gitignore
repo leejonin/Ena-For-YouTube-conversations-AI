@@ -1,0 +1,27 @@
+# --- 비밀키 (.example 복사 후 로컬에서 실키 입력, 커밋 금지) ---
+ckey.txt
+key.txt
+yt key.txt
+
+# --- 개인 대화·세션 ---
+DateServer/YYDate.Json
+DateServer/session_history.json
+
+# --- 대용량·생성물 ---
+Models/*.gguf
+llama_bin/
+TTS_Server/.venv/
+DateServer/.venv/
+DateServer/chroma_db/
+TTS_Output/
+TTSoutput/
+*.wav
+
+# --- OpenCV 네이티브 DLL (GitHub 25MB 제한 — README.txt는 커밋) ---
+Fcam/Plugins/*.dll
+
+# --- Unity meta (단독 repo 업로드 시) ---
+*.meta
+
+.DS_Store
+Thumbs.db

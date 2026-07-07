@@ -1,0 +1,12 @@
+{
+  "obsLiveMode": true,
+  "llamaThreads": 3,
+  "llamaGpuLayers": 12,
+  "llamaParallelSlots": 1,
+  "llamaContextSize": 4096,
+  "ttsOnnxThreads": 1,
+  "ttsTotalStepsObs": 7,
+  "bargeInMinIntervalMs": 2000,
+  "ttsPostInterruptDebounceMs": 400,
+  "unityTargetFrameRate": 45
+}

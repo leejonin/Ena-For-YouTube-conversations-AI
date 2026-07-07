@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "baseUrl": "http://127.0.0.1:8080/v1",
+  "model": "qwen2.5-14b-instruct",
+  "timeoutSeconds": 120,
+  "warmupTimeoutSeconds": 45,
+  "searchTimeoutSeconds": 90,
+  "maxTokensUserTurn": 512,
+  "maxTokensSelfTalkTurn": 512,
+  "maxTokensSearchFallback": 512,
+  "apiFullHistoryRecentMessages": 4,
+  "temperatureUserTurn": 0.92,
+  "temperatureSelfTalkTurn": 0.95,
+  "temperatureSearchFallback": 0.45,
+  "disableVisionWhenLocal": true,
+  "warmupOnStart": true,
+  "slaFallbackDialogue": "(😅 아 잠깐만! 다시 말해줄래? ㅎㅎ)",
+  "enableBargeIn": false,
+  "bargeInDuringSelfTalk": true,
+  "bargeInDuringTts": true,
+  "bargeInDeveloperPriority": true,
+  "llamaParallelSlots": 1
+}

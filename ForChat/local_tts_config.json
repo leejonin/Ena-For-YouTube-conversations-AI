@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "baseUrl": "http://127.0.0.1:8081",
+  "engine": "supertonic3",
+  "voice": "F2",
+  "lang": "ko",
+  "timeoutSeconds": 20,
+  "warmupTimeoutSeconds": 10,
+  "warmupOnStart": true,
+  "fallbackToOpenAi": false,
+  "koreanOnly": false,
+  "bilingualSegmentTts": true,
+  "outputFormat": "wav",
+  "synthesisSpeed": 0.92,
+  "totalSteps": 7,
+  "onnxThreads": 1,
+  "maxConcurrentSynthesis": 1,
+  "processPriorityBelowNormal": true
+}
